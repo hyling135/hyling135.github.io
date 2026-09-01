@@ -5,6 +5,7 @@ permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
+published: false   # not part of the site for now; see /internships-and-projects/
 ---
 
 {% include base_path %}
@@ -57,25 +58,14 @@ Talks
   {% endfor %}</ul>
 -->
 
+{% comment %}
 Internships and Projects
 ======
-<ul>
-  <div class="list__item">
-    <article class="archive__item">
-      <li>
-        <h3 class="archive__item-title archive__item-title--plain"><strong>Practical Work</strong>, ETH Zürich, 2023</h3>
-        <p class="archive__item-location">Zürich, Switzerland</p>
-        <div class="archive__item-content">
-          <p>Supervisors: Dr. Thibault Dardinier, Dr. Gaurav Parthasarathy, Prof. Dr. Peter Müller</p>
-          <ul>
-            <li>Formally defined least fixed point predicate interpretation for Viper’s abstract semantics, and derived an equirecursive semantics from it.</li>
-            <li>Proved combinability and semantic multiplication and syntactic multiplication equivalence properties on satisfiability of Viper’s equirecursive semantics.</li>
-          </ul>
-        </div>
-      </li>
-    </article>
-  </div>
-</ul>
+The entries now live in _pages/internships-and-projects.html, which is their
+only copy. If this CV page is ever re-enabled, either move them back here or
+pull them in from that page with:
+  {% raw %}{% assign ip = site.pages | where: "path", "_pages/internships-and-projects.html" | first %}{{ ip.content }}{% endraw %}
+{% endcomment %}
 
 Teaching
 ======
