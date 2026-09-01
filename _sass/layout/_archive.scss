@@ -57,6 +57,32 @@
   }
 }
 
+/* Titles that mix a bold lead (e.g. "Research Intern") with non-bold
+   details (institution, dates), used by the hand-written CV entries. */
+.archive__item-title--plain {
+  font-weight: normal;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+.archive__item-location {
+  margin: 0 0 0.25em;
+  color: var(--global-text-color-light);
+  font-family: $sans-serif;
+  font-size: 0.875em;
+}
+
+.archive__item-content {
+  margin-top: 0;
+  font-size: $type-size-5;
+
+  ul, ol {
+    margin-top: 0.25em;
+  }
+}
+
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
@@ -79,7 +105,9 @@
     box-shadow: 0 0 10px rgba(#000, 0.25);
   }
 
-  .archive__item-title {
+  /* Only underline titles that are actually links; collections with
+     `output: false` render a plain-text title (see _config.yml). */
+  .archive__item-title:has(a) {
     text-decoration: underline;
   }
 }
