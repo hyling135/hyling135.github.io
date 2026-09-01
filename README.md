@@ -1,3 +1,7 @@
+# About This Repository
+
+This repository contains builds of my personal webpage. It is forked from [Academic Pages template](https://github.com/academicpages/academicpages.github.io). The following content comes from its README.
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 

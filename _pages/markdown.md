@@ -5,6 +5,7 @@ author_profile: true
 redirect_from: 
   - /md/
   - /markdown.html
+published: false   # unused template page: kept on disk, not built
 ---
 
 {% include toc %}

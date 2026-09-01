@@ -5,6 +5,7 @@ permalink: /cv-json/
 author_profile: false
 redirect_from:
   - /resume-json
+published: false   # unused template page: kept on disk, not built
 ---
 
 {% include base_path %}

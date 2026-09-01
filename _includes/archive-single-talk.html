@@ -26,10 +26,20 @@
       </div>
     {% endif %}
     <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% comment %}Only link to the item's own page if its collection still outputs one
+      (see `output:` under `collections:` in _config.yml).{% endcomment %}
+      {% assign item_collection = site.collections | where: "label", post.collection | first %}
+      {% if post.collection and item_collection.output == false %}
+        {% assign has_page = false %}
       {% else %}
+        {% assign has_page = true %}
+      {% endif %}
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a>{% if has_page %} <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>{% endif %}
+      {% elsif has_page %}
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% else %}
+        {{ title }}
       {% endif %}
     </h2>
     {% if post.read_time %}
