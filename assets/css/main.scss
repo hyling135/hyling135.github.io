@@ -34,6 +34,8 @@
 
     "layout/page",
     "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv"
+    "layout/sidebar"
+    // "layout/json_cv" was moved to template_unused/_sass/layout/ with the JSON CV
+    // page. To restore it, add a comma after "layout/sidebar" and uncomment:
+    // , "layout/json_cv"
 ;

@@ -170,13 +170,8 @@ include:
   - _pages
   - files
 exclude:
-  # Talk map. The page itself is switched off with `published: false` in
-  # _pages/talkmap.html; these are static files with no front matter, so
-  # exclude is the only way to keep them out of the built site.
-  - talkmap
-  - talkmap.py
-  - talkmap.ipynb
-  - talkmap_out.ipynb
+  # Unused template collections and pages, kept on disk for reference only.
+  - template_unused
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -242,7 +237,7 @@ collections:
     output: false   # no per-item pages; items are listed on the index pages only
     permalink: /:collection/:path/
   talks:
-    output: false   # no per-item pages; items are listed on the index pages only
+    output: true    # each file in _talks/ is one talk page, linked from /talks/
     permalink: /:collection/:path/
 
 
@@ -259,7 +254,6 @@ defaults:
       comments: true
       share: true
       related: true
-      published: false   # template demo posts; this site has no blog
   # _pages
   - scope:
       path: ""
@@ -276,7 +270,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-      published: false   # template demo items; /teaching/ is hand-written now
   # _publications
   - scope:
       path: ""
@@ -303,13 +296,6 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-
-  # Duplicate of the permalink used by _publications/2024-02-17-paper-title-number-4.md,
-  # so it silently overwrote paper 4's page.
-  - scope:
-      path: "_publications/2025-06-08-paper-title-number-5.md"
-    values:
-      published: false
 
 # Sass/SCSS
 sass:

@@ -2,7 +2,6 @@
 title: "Archive Layout with Content"
 layout: archive
 permalink: /archive-layout-with-content/
-published: false   # unused template page: kept on disk, not built
 ---
 
 A variety of common markup showing how the theme styles them.

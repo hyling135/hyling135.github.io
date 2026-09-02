@@ -5,12 +5,34 @@ permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+{% comment %}
+The template's original approach listed the _talks collection here (plus an optional link to the
+talk map, which is switched off via `talkmap_link: false` in _config.yml). The entries are now
+hand-written below, and _talks/ now holds one page per talk instead (the template's demo files were
+moved to template_unused/_talks/). To go back to the original approach, restore:
+  {% raw %}{% if site.talkmap_link == true %}
 
-{% endif %}
+  <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+  {% endif %}
+
+  {% for post in site.talks reversed %}
+    {% include archive-single-talk.html %}
+  {% endfor %}{% endraw %}
+{% endcomment %}
+
+<div class="list__item">
+  <article class="archive__item">
+    <h2 class="archive__item-title">From Monopoly to Competition: Optimal Contests Prevail</h2>
+    <p class="archive__item-context">Conference talk at AAAI 2023</p>
+    <p class="archive__item-links">
+      <a href="{{ base_path }}/talks/aaai23/">Abstract</a>
+      <span class="archive__item-links-separator">&middot;</span>
+      <a href="{{ base_path }}/files/aaai23-slides.pdf">Slides</a>
+      <span class="archive__item-links-separator">&middot;</span>
+      <a href="https://doi.org/10.48448/ma4b-tk90">Recording</a>
+    </p>
+  </article>
+</div>
