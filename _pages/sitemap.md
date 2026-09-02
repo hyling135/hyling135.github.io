@@ -7,17 +7,22 @@ author_profile: true
 
 {% include base_path %}
 
-A list of all the posts and pages found on the site. For you robots out there, there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
+A list of all the pages found on the site. For you robots out there, there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
 
 <h2>Pages</h2>
 {% for post in site.pages %}
   {% include archive-single.html %}
 {% endfor %}
 
-<h2>Posts</h2>
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+{% comment %}
+The template also listed the _posts collection here. This site has no posts (the template's demo
+files were moved to template_unused/_posts/), so the loop only produced an empty "Posts" heading.
+To bring it back, restore:
+  {% raw %}<h2>Posts</h2>
+  {% for post in site.posts %}
+    {% include archive-single.html %}
+  {% endfor %}{% endraw %}
+{% endcomment %}
 
 {% capture written_label %}'None'{% endcapture %}
 
@@ -25,7 +30,7 @@ A list of all the posts and pages found on the site. For you robots out there, t
 {% unless collection.output == false or collection.label == "posts" %}
   {% capture label %}{{ collection.label }}{% endcapture %}
   {% if label != written_label %}
-  <h2>{{ label }}</h2>
+  <h2>{{ label | capitalize }}</h2>
   {% capture written_label %}{{ label }}{% endcapture %}
   {% endif %}
 {% endunless %}
