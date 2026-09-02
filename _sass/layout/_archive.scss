@@ -67,16 +67,20 @@
   }
 }
 
-/* `--location` is the place an entry happened (CV entries); `--context` is the
-   secondary line of a talk entry (e.g. "Conference talk at AAAI 2023"). They are
-   named apart so the markup stays readable, but they are styled the same: a
-   quieter line sitting directly under the title. */
-.archive__item-location,
-.archive__item-context {
+/* The place a CV entry happened, set quieter and smaller than the entry itself. */
+.archive__item-location {
   margin: 0 0 0.25em;
   color: var(--global-text-color-light);
   font-family: $sans-serif;
   font-size: 0.875em;
+}
+
+/* The secondary line of a talk entry (e.g. "Conference talk at AAAI 2023"). Unlike
+   the location line above, it reads as body text: same size and colour as the row
+   of links below it. */
+.archive__item-context {
+  margin: 0 0 0.25em;
+  font-size: $type-size-5;
 }
 
 /* The row of links under a hand-written entry (Abstract / Slides / Recording). */
