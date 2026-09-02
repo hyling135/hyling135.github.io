@@ -69,9 +69,26 @@ pull them in from that page with:
 
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
+{% comment %}
+The template's original approach listed the _teaching collection here:
+  {% raw %}<ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul>{% endraw %}
+Those demo items are disabled (`published: false` under the _teaching defaults
+in _config.yml) and the entries are hand-written below, mirroring
+_pages/teaching.html, which is their other copy.
+{% endcomment %}
+* Teaching Assistant, ETH Zürich, Zürich, Switzerland
+  * Applied Cryptography (2023)
+  * Concepts of Object-Oriented Programming (2024)
+  * Research Topics in Software Engineering (2024)
+  * Computer Science I &ndash; D-ITET (2025 and 2026)
+  * Theoretical Computer Science (2025)
+  * Computer Science II &ndash; D-ITET (2026)
+
+* Teaching Assistant, Peking University, Beijing, China
+  * Introduction to Computer Systems (2019 and 2020)
+  * Foundamentals of Cryptography (2020)
 
 <!--
 Service and leadership

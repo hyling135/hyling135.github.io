@@ -5,8 +5,42 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+{% comment %}
+The template's original approach listed the _teaching collection here. The entries are now hand-written below,
+and the demo files left in _teaching/ are disabled via `published: false` in _config.yml. To go back to the original approach, restore:
+  {% raw %}{% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  {% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}{% endraw %}
+{% endcomment %}
+
+<div class="list__item">
+  <article class="archive__item">
+    <h2 class="archive__item-title archive__item-title--plain"><strong>Teaching Assistant</strong>, ETH Zürich</h2>
+    <p class="archive__item-location">Zürich, Switzerland</p>
+    <div class="archive__item-content">
+      <ul>
+        <li>Applied Cryptography (2023)</li>
+        <li>Concepts of Object-Oriented Programming (2024)</li>
+        <li>Research Topics in Software Engineering (2024)</li>
+        <li>Computer Science I &ndash; D-ITET (2025 and 2026)</li>
+        <li>Theoretical Computer Science (2025)</li>
+        <li>Computer Science II &ndash; D-ITET (2026)</li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item">
+    <h2 class="archive__item-title archive__item-title--plain"><strong>Teaching Assistant</strong>, Peking University</h2>
+    <p class="archive__item-location">Beijing, China</p>
+    <div class="archive__item-content">
+      <ul>
+        <li>Introduction to Computer Systems (2019 and 2020)</li>
+        <li>Foundamentals of Cryptography (2020)</li>
+      </ul>
+    </div>
+  </article>
+</div>
