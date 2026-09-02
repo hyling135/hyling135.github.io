@@ -14,7 +14,20 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+            {% comment %}
+              `selected` marks the page you are actually on. _masthead.scss gives it
+              pointer-events: none, so it is deliberately not clickable.
+              `current-section` marks an ancestor of the page you are on (e.g. Talks
+              while viewing /talks/aaai23/): same emphasis, but still a working link
+              so you can get back up to the index.
+            {% endcomment %}
+            {% assign nav_state = '' %}
+            {% if page.url == link.url %}
+              {% assign nav_state = ' selected' %}
+            {% elsif link.url != '/' and page.url contains link.url %}
+              {% assign nav_state = ' current-section' %}
+            {% endif %}
+            <li class="masthead__menu-item{{ nav_state }}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}

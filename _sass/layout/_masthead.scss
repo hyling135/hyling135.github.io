@@ -74,6 +74,15 @@
   cursor: default; /* Move this here too */
 }
 
+/* Ancestor of the current page (e.g. Talks while viewing a single talk): same
+   emphasis as .selected, but without the pointer-events lock, so it stays a
+   working link back to the index. */
+.masthead__menu-item.current-section a {
+  color: var(--global-text-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--global-text-color);
+}
+
 .masthead__menu-item.selected a:hover {
   color: var(--global-text-color);
   border-bottom: 2px solid var(--global-text-color);

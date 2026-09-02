@@ -5,34 +5,138 @@ permalink: /publications/
 author_profile: true
 ---
 
-<!--
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
--->
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
+{% comment %}
+The template's original approach listed the _publications collection here, grouped by the categories
+defined under `publication_category` in _config.yml (plus an optional link to a Google Scholar
+profile). The entries are now hand-written below, and _publications/ now holds one abstract page per
+paper instead (the template's demo files were moved to template_unused/_publications/). To go back
+to the original approach, restore:
+  {% raw %}{% if site.author.googlescholar %}
+    <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  {% endif %}
+
+  {% if site.publication_category %}
+    {% for category in site.publication_category  %}
+      {% assign title_shown = false %}
+      {% for post in site.publications reversed %}
+        {% if post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% unless title_shown %}
+          <h2>{{ category[1].title }}</h2><hr />
+          {% assign title_shown = true %}
+        {% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
     {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
       {% include archive-single.html %}
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  {% endif %}{% endraw %}
+{% endcomment %}
 
+<h2>Conference Publications</h2><hr />
 
+<div class="list__item">
+  <article class="archive__item publication">
+    <div class="publication__venue">
+      <span class="publication__venue-abbrev">OOPSLA</span>
+      <span class="publication__venue-year">2026</span>
+    </div>
+    <div class="publication__details">
+      <p class="publication__title">Sound State Encodings in Translational Separation Logic Verifiers</p>
+      <p class="publication__authors">Hongyi Ling, Thibault Dardinier, Ellen Arlt, Peter M&uuml;ller</p>
+      <p class="publication__venue-name">ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications</p>
+      <p class="archive__item-links">
+        <a href="{{ base_path }}/publications/oopsla26/">Abstract</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/oopsla26-ext.pdf">Extended Version</a>
+      </p>
+    </div>
+  </article>
+</div>
 
+<div class="list__item">
+  <article class="archive__item publication">
+    <div class="publication__venue">
+      <span class="publication__venue-abbrev">AAAI</span>
+      <span class="publication__venue-year">2023</span>
+    </div>
+    <div class="publication__details">
+      <p class="publication__title">From Monopoly to Competition: Optimal Contests Prevail</p>
+      <p class="publication__authors">(Alphabet) Xiaotie Deng, Yotam Gafni, Ron Lavi, Tao Lin, Hongyi Ling</p>
+      <p class="publication__venue-name">AAAI Conference on Artificial Intelligence</p>
+      <p class="archive__item-links">
+        <a href="{{ base_path }}/publications/aaai23/">Abstract</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/aaai23.pdf">PDF</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/aaai23-arxiv.pdf">arXiv Version</a>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item publication">
+    <div class="publication__venue">
+      <span class="publication__venue-abbrev">ICDCS</span>
+      <span class="publication__venue-year">2021</span>
+    </div>
+    <div class="publication__details">
+      <p class="publication__title">Poster: An Efficient Permissioned Blockchain with Provable Reputation Mechanism</p>
+      <p class="publication__authors">(Alphabet) Hongyin Chen, Zhaohua Chen, Yukun Cheng, Xiaotie Deng, Wenhan Huang, Jichen Li, Hongyi Ling, Mengqian Zhang</p>
+      <p class="publication__venue-name">IEEE International Conference on Distributed Computing Systems</p>
+      <p class="archive__item-links">
+        <a href="{{ base_path }}/publications/icdcs21/">Abstract</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/icdcs21.pdf">PDF</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/icdcs21-arxiv.pdf">arXiv Version</a>
+      </p>
+    </div>
+  </article>
+</div>
+
+<h2>Journal Publications</h2><hr />
+
+<div class="list__item">
+  <article class="archive__item publication">
+    <div class="publication__venue">
+      <span class="publication__venue-abbrev">GEB</span>
+      <span class="publication__venue-year">2025</span>
+    </div>
+    <div class="publication__details">
+      <p class="publication__title">From Monopoly to Competition: When Do Optimal Contests Prevail?</p>
+      <p class="publication__authors">(Alphabet) Xiaotie Deng, Yotam Gafni, Ron Lavi, Tao Lin, Hongyi Ling</p>
+      <p class="publication__venue-name">Games and Economic Behavior</p>
+      <p class="archive__item-links">
+        <a href="{{ base_path }}/publications/geb25/">Abstract</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/geb.pdf">PDF</a>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item publication">
+    <div class="publication__venue">
+      <span class="publication__venue-abbrev">TCC</span>
+      <span class="publication__venue-year">2023</span>
+    </div>
+    <div class="publication__details">
+      <p class="publication__title">A Provable Softmax Reputation-Based Protocol for Permissioned Blockchains</p>
+      <p class="publication__authors">(Alphabet) Hongyin Chen, Zhaohua Chen, Yukun Cheng, Xiaotie Deng, Wenhan Huang, Jichen Li, Hongyi Ling, Mengqian Zhang</p>
+      <p class="publication__venue-name">IEEE Transactions on Cloud Computing</p>
+      <p class="archive__item-links">
+        <a href="{{ base_path }}/publications/tcc23/">Abstract</a>
+        <span class="archive__item-links-separator">&middot;</span>
+        <a href="{{ base_path }}/files/tcc.pdf">PDF</a>
+      </p>
+    </div>
+  </article>
+</div>

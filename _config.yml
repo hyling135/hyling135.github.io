@@ -231,7 +231,7 @@ collections:
     output: false   # no per-item pages; items are listed on the index pages only
     permalink: /:collection/:path/
   publications:
-    output: false   # no per-item pages; items are listed on the index pages only
+    output: true    # each file in _publications/ is one abstract page, linked from /publications/
     permalink: /:collection/:path/
   portfolio:
     output: false   # no per-item pages; items are listed on the index pages only

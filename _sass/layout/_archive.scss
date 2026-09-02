@@ -90,6 +90,50 @@
   padding: 0 0.15em;
 }
 
+/* Publication entries: a narrow venue column (abbreviation over year, both centered)
+   next to the paper's details (title, authors, venue, links), all left-aligned. */
+.publication {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.publication__venue {
+  flex: 0 0 6em;
+  margin-right: 1.25em;
+  text-align: center;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-5;
+  line-height: 1.3;
+}
+
+.publication__venue-abbrev {
+  display: block;
+  font-weight: bold;
+}
+
+.publication__venue-year {
+  display: block;
+}
+
+.publication__details {
+  /* `min-width: 0` lets a long title wrap instead of stretching the flex item. */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* The first three lines of an entry; the fourth is `.archive__item-links`. */
+.publication__title,
+.publication__authors,
+.publication__venue-name {
+  margin: 0 0 0.15em;
+  font-size: $type-size-5;
+}
+
+.publication__title {
+  font-weight: bold;
+}
+
 .archive__item-content {
   margin-top: 0;
   font-size: $type-size-5;

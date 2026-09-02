@@ -1,0 +1,28 @@
+---
+layout: archive
+title: "A Provable Softmax Reputation-Based Protocol for Permissioned Blockchains"
+permalink: /publications/tcc23/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>We consider a hierarchical structure of a permissioned blockchain with three types of participant:
+providers, collectors, and governors. Providers forward transactions to collectors; collectors
+upload received transactions to governors after verifying and labeling them; and governors validate
+a portion of the labeled transactions they receive, pack valid transactions into a block, and append
+the block to the ledger. This model has various fields of application including data collection from
+the Internet-of-Things and second-hand markets. Our main contribution is to propose a
+reputation-based protocol to help governors evaluate the reliability of collectors. Specifically,
+given a transaction, each governor runs a softmax-based function to calculate a probability for each
+collector that sent and labeled this transaction. The probabilities, calculated using collectors'
+reputations as inputs, represent the likelihood of the lead governor selecting the labeled
+transaction from collectors to consider for further validation. After the lead governor verifies a
+transaction, all collectors' reputations are updated in line with the agreement of their labeling
+and the validity of the transaction as found by the lead governor. We show, both theoretically and
+empirically, that our protocol can significantly reduce governors' verification workloads while
+maintaining firm liveness and high incentives.</p>
+
+<p class="archive__item-links">
+  <a href="{{ base_path }}/files/tcc.pdf">PDF</a>
+</p>
