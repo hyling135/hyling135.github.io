@@ -66,6 +66,16 @@
   }
 }
 
+/* The site title is no longer a link, so it needs the box metrics that
+   `.greedy-nav a` used to give it (margin-left comes from being :first-child). */
+.masthead__site-title {
+  display: block;
+  margin: 0 1rem 0 0;
+  padding: 0.5rem 0;
+  color: var(--global-text-color);
+  cursor: default;
+}
+
 .masthead__menu-item.selected a {
   color: var(--global-text-color);
   font-weight: 700;

@@ -5,8 +5,13 @@
       <nav id="site-nav" class="greedy-nav">
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+          {% comment %}
+            The site title is plain text, not a link: use the "About Me" nav item to
+            reach the front page. As a <span> it picks up neither the hover underline
+            (.visible-links a:before) nor the .selected border.
+          {% endcomment %}
+          <li class="masthead__menu-item masthead__menu-item--lg persist">
+            <span class="masthead__site-title">{{ site.title }}</span>
           </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}

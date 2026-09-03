@@ -67,7 +67,7 @@
   }
 }
 
-/* The place a CV entry happened, set quieter and smaller than the entry itself. */
+/* Location of an entry, set quieter and smaller than the entry itself. */
 .archive__item-location {
   margin: 0 0 0.25em;
   color: var(--global-text-color-light);
@@ -136,6 +136,36 @@
 
 .publication__title {
   font-weight: bold;
+}
+
+/* Education entries: a narrow column holding the period, next to the degree's
+   details (degree and university, location, awards), all left-aligned. */
+.education {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.education__period {
+  flex: 0 0 8em;
+  margin-right: 1.25em;
+  /* Nudged down so the period lines up with the taller degree line beside it. */
+  padding-top: 0.1em;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-5;
+  line-height: 1.3;
+}
+
+.education__details {
+  /* `min-width: 0` lets a long degree line wrap instead of stretching the flex item. */
+  flex: 1 1 auto;
+  min-width: 0;
+
+  /* The `.page__content .archive__item-title` rule above pushes entry titles
+     down by 1em, which here would drop the degree line below the period. */
+  .archive__item-title {
+    margin-top: 0;
+  }
 }
 
 .archive__item-content {
